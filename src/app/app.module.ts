@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { SomeComponent } from './some/some.component';
+import { LikeDirective } from './like.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SomeComponent,
+    LikeDirective
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,17 @@
-<input type="text" [placeholder]="hjcghjhvkhjk" [(ngModel)]="title"/>
+<!-- <h2 appLike>{{ title }}</h2>
 
-<h2>{{ title }}</h2>
+<app-some 
+[someText]='title' 
+(textEmiter)='sendText($event)'
+(objectEmiter)='setObject($event)'
+></app-some> -->
+
+
+<ul>
+    <li *ngFor="let user of users">
+        <h3>Name: {{ user.name }}</h3>
+        <p>Age: {{ user.age }}</p>
+        <p *ngIf='user.is_active' [ngClass]="{ test: user.is_active }">Email: {{ user.email }}</p>
+        <p>Description: {{ user.description }}</p>
+    </li>
+</ul>

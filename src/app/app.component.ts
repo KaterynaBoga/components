@@ -1,54 +1,55 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { AfterViewInit } from '@angular/core';
-import { DoCheck } from '@angular/core';
-import { AfterContentInit } from '@angular/core';
-import { OnChanges } from '@angular/core';
-import { AfterContentChecked } from '@angular/core';
-import { OnDestroy } from '@angular/core';
-import { AfterViewChecked } from '@angular/core';
+import { Component } from '@angular/core';
+
+interface User {
+  name: string;
+  age: number;
+  email: string;
+  id: number;
+  description: string;
+  is_active: boolean;
+}
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit, DoCheck, AfterContentInit, OnChanges, AfterContentChecked, OnDestroy, Input, AfterViewChecked {
-  title = 'Hello word';
+export class AppComponent {
+  // public title: string = 'Hello';
 
-  @Input() test: string;
-  constructor() {}
+  // public sendText(text: string) {
+  //   this.title = text;
+  // }
 
-  ngOnInit(): void {
-    console.log('ngOnInit', 1, 'вызывается один раз, выполняет инициализацию');
-  }
+  // public setObject(obj) {
+  //   console.log(obj);
+  // }
 
-  ngAfterViewInit(): void {
-    console.log('ngAfterViewInit', 5, 'вызывается один раз после первого вызова ngAfterContentChecked()');
-  }
-
-  ngDoCheck(): void {
-    console.log('ngDoCheck', 2, 'вызывается при каждой проверке изменений свойств компонента');
-  }
-
-  ngAfterContentInit(): void {
-    console.log('ngAfterContentInit', 3, 'вызывается один раз после метода ngDoCheck()');
-  }
-
-  ngOnChanges(): void {
-    console.log('ngOnChanges', 0, 'вызывается до метода ngOnInit(), а также при любой переустановке или изменений значений свойств');
-  }
-  ngAfterContentChecked(): void {
-    console.log('ngAfterContentChecked', 4, 'вызывается после метода ngAfterContentInit() и каждый раз после ngDoCheck()');
-  }
-
-  ngAfterViewChecked(): void {
-    console.log('ngAfterViewCheked', 6, 'вызывается много раз после проверка на изменения в представлении компонента');
-  }
-
-  ngOnDestroy(): void {
-    console.log('ngOnDestroy', 7, 'перед удалением компонента');
-  }
+  public users: User[] = [
+    {
+      name: 'Petya',
+      age: 21,
+      email: 'some email',
+      id: 1,
+      description: 'Lorem dollar',
+      is_active: false
+    }, 
+    {
+      name: 'Vasya',
+      age: 15,
+      email: 'some email2',
+      id: 12,
+      description: 'Lorem dolla2r',
+      is_active: true
+    },
+    {
+      name: 'Jhon',
+      age: 221,
+      email: 'some emai4l',
+      id: 41,
+      description: 'Lorem do44llar',
+      is_active: true
+    }
+]
 
 }
-
-
